@@ -1,9 +1,9 @@
 package org.example.demo.services.InterValidations;
 
-import org.example.demo.entity.Currency;
+import org.example.demo.entity.Valuables;
 
 public interface Interface {
 
-    void validation(Currency currency) throws Exception;
+    void validation(Valuables valuables) throws Exception;
 
 }
