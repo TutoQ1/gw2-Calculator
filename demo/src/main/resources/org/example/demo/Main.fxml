@@ -4,6 +4,7 @@
 
 <TabPane xmlns:fx="http://javafx.com/fxml">
     <tabs>
+
         <Tab text="Changelog">
             <content>
                 <fx:include source="Changelog.fxml"/>
@@ -15,5 +16,12 @@
                 <fx:include source="Sumatory.fxml"/>
             </content>
         </Tab>
+
+        <Tab text ="Gold Multiplier">
+            <content>
+                <fx:include source="Multiply.fxml"/>
+            </content>
+        </Tab>
+
     </tabs>
 </TabPane>

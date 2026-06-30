@@ -2,27 +2,28 @@ package org.example.demo.services.Implements;
 
 
 import org.example.demo.entity.Valuables;
-import org.example.demo.services.InterValidations.Interface;
 
-import java.util.ArrayList;
 
-public class GoldSum implements Interface {
+public class GoldSum{
 
     Valuables valuables = new Valuables();
-
-    @Override
-    public void validation(Valuables valuables) throws Exception {
-        if(valuables.getCopper()<0&& valuables.getGold()<0&& valuables.getSilver()<0){
-            throw new Exception("Valor invalido");
-        }
-    }
     long value = 0;
 
-    public void sumGold(double gold,double silver, double copper){
-        gold *= 10000;
-        silver *=100;
+    public  void validation(double gold, double silver, double copper)throws IllegalArgumentException{
 
-        value += (long) (gold+silver+copper);
+        if(gold<0||silver<0||copper<0){
+           throw  new IllegalArgumentException("VALOR INVALIDO");
+        }
+
+    }
+
+
+    public void sumGold(double gold,double silver, double copper) throws Exception{
+           gold *= 10000;
+           silver *= 100;
+
+           value += (long) (gold + silver + copper);
+
     }
 
     public Valuables getSumGold(){

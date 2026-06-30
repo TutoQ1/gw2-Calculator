@@ -6,14 +6,18 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.example.demo.controllers.methods.ControllersMethods;
 import org.example.demo.entity.Valuables;
 import org.example.demo.services.Implements.GoldSum;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.ResourceBundle;
 
 public class SumController implements Initializable {
+    MultiController multi = new MultiController();
+
     @FXML private Label labelTitleSum;
     @FXML private Label labelSubTitleSum1;
     @FXML private Label labelSubTitleSum2;
@@ -28,6 +32,7 @@ public class SumController implements Initializable {
     @FXML private Label lblError;
 
     GoldSum goldSum = new GoldSum();
+    ControllersMethods method = new ControllersMethods();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,35 +45,40 @@ public class SumController implements Initializable {
         txtSumGold.setPromptText("gold");
         txtSumSilver.setPromptText("silver");
         txtSumCopper.setPromptText("copper");
-        labelSumGold.setText("0");
-        labelSumSilver.setText("0");
-        labelSumCopper.setText("0");
+        method.hideResultLabels(labelSumGold,labelSumSilver,labelSumCopper);
     }
 
     @FXML
     public void sumValue(){
 
-        try {
-            //Gold input
-            String textGold = txtSumGold.getText();
-            double gold = Double.parseDouble(textGold);
-            //silver input
-            String textSilver = txtSumSilver.getText();
-            double silver = Integer.parseInt(textSilver);
-            //copper input
-            String textCopper = txtSumCopper.getText();
-            double copper = Integer.parseInt(textCopper);
-            //call the method @sumGold to add amounts until the user stop its
-            goldSum.sumGold(gold,silver,copper);
-            txtSumGold.setText(null);
-            txtSumSilver.setText(null);
-            txtSumCopper.setText(null);
+            try {
+                lblError.setVisible(false);
+                //Gold input
+                String textGold = txtSumGold.getText();
+                double gold = Double.parseDouble(textGold);
+                //silver input
+                String textSilver = txtSumSilver.getText();
+                double silver = Integer.parseInt(textSilver);
+                //copper input
+                String textCopper = txtSumCopper.getText();
+                double copper = Integer.parseInt(textCopper);
+                //call the method @sumGold to add amounts until the user stop its
 
-        } catch (Exception e) {
-            lblError.setText("ERROR, Fill all the fields");
-            lblError.setAlignment(Pos.BASELINE_CENTER);
-            lblError.setVisible(true);
-        }
+                goldSum.validation(gold,silver,copper);
+                goldSum.sumGold(gold, silver, copper);
+
+                method.resetValue1(txtSumGold, txtSumCopper, txtSumSilver);
+
+            } catch (IllegalArgumentException e) {
+                lblError.setText(e.getMessage());
+                lblError.setAlignment(Pos.BASELINE_CENTER);
+                lblError.setVisible(true);
+
+            } catch (Exception e) {
+                lblError.setText("Fill all the fields");
+                lblError.setAlignment(Pos.BASELINE_CENTER);
+                lblError.setVisible(true);
+            }
 
     }
 
@@ -82,21 +92,18 @@ public class SumController implements Initializable {
         labelSumSilver.setText(String.valueOf((int) valuables.getSilver()));
         labelSumCopper.setText(String.valueOf((int) valuables.getCopper()));
 
-        txtSumGold.setText(null);
-        txtSumSilver.setText(null);
-        txtSumCopper.setText(null);
+        method.resetValue1(txtSumGold,txtSumCopper,txtSumSilver);
+        method.showResultLabels(labelSumGold,labelSumSilver,labelSumCopper);
+
 
     }
 
     @FXML
     public void reset(){
-        labelSumGold.setText("0");
-        labelSumSilver.setText("0");
-        labelSumCopper.setText("0");
-        txtSumGold.setText(null);
-        txtSumSilver.setText(null);
-        txtSumCopper.setText(null);
 
+        method.resetValue1(txtSumGold,txtSumCopper,txtSumSilver);
+        method.hideResultLabels(labelSumGold,labelSumSilver,labelSumCopper);
+        lblError.setVisible(false);
         goldSum.reset();
     }
 }
