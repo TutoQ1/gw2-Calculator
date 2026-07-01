@@ -30,4 +30,14 @@ public class ControllersMethods {
         label2.setVisible(true);
         label3.setVisible(true);
     }
+
+    //Those methods are used for @MultiController convenience
+    public void hideResultLabels1(Label label, Label label2){
+        label.setVisible(false);
+        label2.setVisible(false);
+    }
+    public void showResultLabels1(Label label, Label label2){
+        label.setVisible(true);
+        label2.setVisible(true);
+    }
 }

@@ -27,8 +27,6 @@ public class SumController implements Initializable {
     @FXML private TextField txtSumGold;
     @FXML private TextField txtSumSilver;
     @FXML private TextField txtSumCopper;
-    @FXML private Button btnSumPlus;
-    @FXML private Button btnSumResult;
     @FXML private Label lblError;
 
     GoldSum goldSum = new GoldSum();
@@ -78,6 +76,8 @@ public class SumController implements Initializable {
                 lblError.setText("Fill all the fields");
                 lblError.setAlignment(Pos.BASELINE_CENTER);
                 lblError.setVisible(true);
+            }finally {
+                method.hideResultLabels(labelSumGold,labelSumSilver,labelSumCopper);
             }
 
     }

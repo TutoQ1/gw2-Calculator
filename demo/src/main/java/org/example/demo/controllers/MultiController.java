@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import org.example.demo.controllers.methods.ControllersMethods;
 import org.example.demo.entity.Valuables;
 import org.example.demo.services.Implements.GoldMulti;
+import org.example.demo.services.Implements.GoldSum;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,6 +18,7 @@ import java.util.ResourceBundle;
 public class MultiController implements Initializable {
 
     GoldMulti goldMulti = new GoldMulti();
+    GoldSum goldSum = new GoldSum();
     ControllersMethods method = new ControllersMethods();
 
     @FXML private Label lbl_Title;
@@ -24,9 +26,6 @@ public class MultiController implements Initializable {
     @FXML private TextField txt_Gold;
     @FXML private TextField txt_Silver;
     @FXML private TextField txt_Copper;
-    @FXML private Button btn_Mul;
-    @FXML private Button btn_Result;
-    @FXML private Button btn_Reset;
     @FXML private Label lbl_Info;
     @FXML private Label lbl_Gold;
     @FXML private Label lbl_Silver;
@@ -48,8 +47,10 @@ public class MultiController implements Initializable {
     }
     @FXML
     public void handleMore(){
+
         try {
-            lbl_Error.setVisible(false);
+
+
             String txtGold = txt_Gold.getText();
             double valueGold = Double.parseDouble(txtGold);
 
@@ -62,11 +63,9 @@ public class MultiController implements Initializable {
             String txtMulti = txt_Multiplier.getText();
             int valueMulti = Integer.parseInt(txtMulti);
 
-            goldMulti.validation(valueGold,valueSilver,valueCopper);
+            goldMulti.validation(valueGold, valueSilver, valueCopper, valueMulti);
             goldMulti.multiGold(valueGold, valueSilver, valueCopper, valueMulti);
-
             method.resetValue(txt_Gold, txt_Silver, txt_Copper, txt_Multiplier);
-
         }catch (IllegalArgumentException e){
             lbl_Error.setVisible(true);
             lbl_Error.setText(e.getMessage());
@@ -76,18 +75,20 @@ public class MultiController implements Initializable {
             lbl_Error.setText("Fill all the fields");
             lbl_Error.setAlignment(Pos.BASELINE_CENTER);
         }
+
     }
 
     @FXML
     public void showResult(){
-        Valuables valuables = goldMulti.getResult();
+            Valuables valuables = goldMulti.getResult();
 
-        lbl_Gold.setText(String.valueOf((int) valuables.getGold()));
-        lbl_Silver.setText(String.valueOf((int) valuables.getSilver()));
-        lbl_Copper.setText(String.valueOf((int) valuables.getCopper()));
+            lbl_Gold.setText(String.valueOf((int) valuables.getGold()));
+            lbl_Silver.setText(String.valueOf((int) valuables.getSilver()));
+            lbl_Copper.setText(String.valueOf((int) valuables.getCopper()));
 
-        method.resetValue(txt_Gold,txt_Silver,txt_Copper,txt_Multiplier);
-        method.showResultLabels(lbl_Gold,lbl_Silver,lbl_Copper);
+            method.resetValue(txt_Gold, txt_Silver, txt_Copper, txt_Multiplier);
+            method.showResultLabels(lbl_Gold, lbl_Silver, lbl_Copper);
+
     }
     @FXML
     public void reset(){
