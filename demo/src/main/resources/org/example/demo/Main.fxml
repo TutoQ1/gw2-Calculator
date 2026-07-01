@@ -23,5 +23,11 @@
             </content>
         </Tab>
 
+        <Tab text="Value in stacks">
+            <content>
+                <fx:include source="ValueStacks.fxml"/>
+            </content>
+        </Tab>
+
     </tabs>
 </TabPane>

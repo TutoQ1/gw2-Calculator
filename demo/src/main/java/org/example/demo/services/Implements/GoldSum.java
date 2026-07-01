@@ -9,14 +9,13 @@ public class GoldSum{
     Valuables valuables = new Valuables();
     long value = 0;
 
-    public  void validation(double gold, double silver, double copper)throws IllegalArgumentException{
+    public void validation(double gold, double silver, double copper)throws IllegalArgumentException{
 
         if(gold<0||silver<0||copper<0){
-           throw  new IllegalArgumentException("VALOR INVALIDO");
+           throw  new IllegalArgumentException("INVALID INPUT");
         }
 
     }
-
 
     public void sumGold(double gold,double silver, double copper) throws Exception{
            gold *= 10000;
