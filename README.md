@@ -1,15 +1,12 @@
-# ⚔️ GW2 Calculator
+# GW2 Calculator
 
-[![GitHub release](https://img.shields.io/github/v/release/TutoQ1/gw2-Calculator?style=flat-square&color=c89b3c&label=version)](https://github.com/TutoQ1/gw2-Calculator/releases)
-[![GitHub downloads](https://img.shields.io/github/downloads/TutoQ1/gw2-Calculator/total?style=flat-square&color=c89b3c)](https://github.com/TutoQ1/gw2-Calculator/releases)
-[![GitHub stars](https://img.shields.io/github/stars/TutoQ1/gw2-Calculator?style=flat-square&color=c89b3c)](https://github.com/TutoQ1/gw2-Calculator/stargazers)
-[![ko-fi](https://img.shields.io/badge/support-ko--fi-c89b3c?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/R8R122FAFJ)
+
 
 > A desktop calculator for Guild Wars 2 players who want to track gold, silver, and copper across farming sessions — no API, no login, no browser needed.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Gold Sumatory** — add multiple gold/silver/copper entries and get the total
 - **Gold Subtraction** — calculate differences between amounts
@@ -17,25 +14,18 @@
 - **Value in Stacks** — find out how many stacks cover a target value
 - **TP@ Valuer** — calculate Trading Post returns at a custom % across stacks
 
----
 
-## 📸 Screenshots
-
-> *Coming soon*
-
----
-
-## ⬇️ Download
+## Download
 
 Head to the [**Releases**](https://github.com/TutoQ1/gw2-Calculator/releases) page and download the latest `.zip`.
 
 **No installation needed** — unzip and run `Gw2Calculator.exe`.
 
-> ⚠️ Requires Windows. Java is bundled — nothing to install separately.
+> Requires Windows. Java is bundled — nothing to install separately.
 
 ---
 
-## 🚀 Roadmap
+## Roadmap
 
 - [ ] Dark / light theme toggle
 - [ ] Multi-language support (EN / ES)
@@ -45,7 +35,7 @@ Head to the [**Releases**](https://github.com/TutoQ1/gw2-Calculator/releases) pa
 
 ---
 
-## 💛 Support
+##  Support
 
 If this tool saves you time on your farming runs, consider buying me a coffee:
 
@@ -53,6 +43,17 @@ If this tool saves you time on your farming runs, consider buying me a coffee:
 
 ---
 
-## 📄 License
+##  License
 
 MIT License — free to use, fork, and share.
+
+>if want to help the proyect, whether in translations or some, you are free, only remember to give atributtion to the original repo link, its all i ask
+
+---
+
+## About me
+
+Im just a system engineer student from colombia
+
+---
+
