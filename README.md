@@ -45,6 +45,10 @@ MIT License — free to use, fork, and share.
 
 ---
 
+---
+## Feedback
+Join this small discrod i created, just to give feedback and help: https://discord.gg/YY8rMEDcWp
+
 ## About me
 
 Im just a system engineer student from colombia
