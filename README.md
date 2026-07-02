@@ -54,4 +54,6 @@ Join this small discrod i created, just to give feedback and help: https://disco
 Im just a system engineer student from colombia
 
 ---
-
+> ⚠️ Windows may show a SmartScreen warning on first launch.
+> Click **"More info"** → **"Run anyway"** to proceed.
+> This happens because the app is new and not yet signed.
