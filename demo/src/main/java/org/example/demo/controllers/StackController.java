@@ -5,14 +5,15 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.example.demo.controllers.methods.ControllersMethods;
+import javafx.scene.text.TextAlignment;
+import org.example.demo.controllers.methods.MethodController;
 import org.example.demo.services.Implements.GoldStack;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-public class ValueController implements Initializable {
+public class StackController implements Initializable {
 
-    ControllersMethods method = new ControllersMethods();
+    MethodController method = new MethodController();
     GoldStack goldStack = new GoldStack();
 
     @FXML private Label lbl_Title;
@@ -25,6 +26,9 @@ public class ValueController implements Initializable {
     @FXML private Label lbl_Decimal;
     @FXML private Label lbl_Error;
     @FXML private TextField txt_value;
+    @FXML private Label stack;
+    @FXML private Label unit;
+    @FXML private Label added;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -36,7 +40,8 @@ public class ValueController implements Initializable {
         lbl_Info.setAlignment(Pos.BASELINE_CENTER);
         txt_Gold.setPromptText("Gold"); txt_Silver.setPromptText("Silver"); txt_Copper.setPromptText("Copper");txt_value.setPromptText("number");
         method.hideResultLabels1(lbl_Decimal,lbl_Value);
-
+        added.setVisible(false);
+        stack.setVisible(false); unit.setVisible(false);
     }
 
     @FXML
@@ -50,32 +55,36 @@ public class ValueController implements Initializable {
             String txtCopper = txt_Copper.getText();
             double copper = Double.parseDouble(txtCopper);
             String txtStack = txt_value.getText();
-            int stack = Integer.parseInt(txtStack);
+            int stack1 = Integer.parseInt(txtStack);
 
-            goldStack.validation(gold,silver,copper,stack);
-            goldStack.stackGold(gold,silver,copper,stack);
+            goldStack.validation(gold,silver,copper,stack1);
+            goldStack.stackGold(gold,silver,copper,stack1);
             method.resetValue(txt_Gold,txt_Silver,txt_Copper,txt_value);
+            method.hideResultLabels1(stack ,unit);
+            method.showTemporary(added,1);
 
         }catch (IllegalArgumentException e){
-            lbl_Error.setVisible(true);
-            lbl_Error.setText(e.getMessage());
-            lbl_Error.setAlignment(Pos.BASELINE_CENTER);
+            method.showError(lbl_Error,e);
 
         }catch (Exception e) {
             lbl_Error.setVisible(true);
             lbl_Error.setText("Fill all the fields");
             lbl_Error.setAlignment(Pos.BASELINE_CENTER);
-        }   
+        }
     }
     @FXML
     public void showResult(){
-       int value = (int) goldStack.showValueResult();
-       lbl_Value.setText(String.valueOf(value));
+        lbl_Error.setVisible(false);
 
-       double decimal = goldStack.showDecimal();
-       lbl_Decimal.setText(String.valueOf(decimal));
+        int value = (int) goldStack.showValueResult();
+        lbl_Value.setTextAlignment(TextAlignment.RIGHT);
+        lbl_Value.setText(String.valueOf(value));
 
-       method.showResultLabels1(lbl_Value,lbl_Decimal);
+        double decimal = goldStack.showDecimal();
+        lbl_Decimal.setText(String.valueOf(decimal));
+
+        method.showResultLabels1(lbl_Value,lbl_Decimal);
+        method.showResultLabels1(stack,unit);
 
     }
     @FXML
@@ -83,6 +92,7 @@ public class ValueController implements Initializable {
         goldStack.reset1();
         method.hideResultLabels1(lbl_Value,lbl_Decimal);
         lbl_Error.setVisible(false);
+        method.hideResultLabels1(stack ,unit);
 
     }
 }
