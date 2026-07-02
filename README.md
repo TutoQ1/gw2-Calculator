@@ -18,6 +18,7 @@
 ## Download
 
 Head to the [**Releases**](https://github.com/TutoQ1/gw2-Calculator/releases) page and download the latest `.zip`.
+User guide: https://drive.google.com/file/d/1dgK57cm-YVn5HPSz27An01qvwK3PJEUh/view?usp=sharing
 
 **No installation needed** — unzip and run `Gw2Calculator.exe`.
 
@@ -25,15 +26,6 @@ Head to the [**Releases**](https://github.com/TutoQ1/gw2-Calculator/releases) pa
 
 ---
 
-## Roadmap
-
-- [ ] Dark / light theme toggle
-- [ ] Multi-language support (EN / ES)
-- [ ] Session history — keep a log of your farming runs
-- [ ] Gold to Gem converter
-- [ ] Export results to `.txt`
-
----
 
 ##  Support
 
