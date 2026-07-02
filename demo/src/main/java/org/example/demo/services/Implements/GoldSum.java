@@ -17,7 +17,7 @@ public class GoldSum{
 
     }
 
-    public void sumGold(double gold,double silver, double copper) throws Exception{
+    public void sumGold(double gold,double silver, double copper){
            gold *= 10000;
            silver *= 100;
 

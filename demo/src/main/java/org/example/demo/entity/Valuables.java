@@ -1,9 +1,7 @@
 package org.example.demo.entity;
 
-import java.util.ArrayList;
-
 /*
- * Here is the MAIN class entitie where the objects are created and used later
+ * Here is the MAIN class entity where the objects are created and used later
  */
 public class Valuables {
     private double gold;
@@ -31,11 +29,22 @@ public class Valuables {
     }
 
 
-
+    //this function is used to convert the manageable number in a convenient syntax
     public Valuables conversion(long value){
         double gold = (double) value/10000;
         double silver = ((double) value%10000)/100;
         double copper = (double) value % 100;
+
+        return new Valuables(gold,silver,copper);
+
+    }
+    //this function is used to convert the manageable number of GoldTp class to convenient syntax
+    public Valuables conversionDouble(double value){
+        long total = (long) value;
+
+        double gold =   total/10000;
+        double silver = (total%10000) / 100.0;
+        double copper = total % 100;
 
         return new Valuables(gold,silver,copper);
 

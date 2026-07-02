@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controllers.MultiController">
+<VBox xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controllers.TpController">
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0">
         <children>
             <Label fx:id="lbl_Title" layoutX="9.0" layoutY="39.0" prefHeight="93.0" prefWidth="782.0" text="EXAMPLE" textAlignment="CENTER">
@@ -20,9 +20,9 @@
                     <Font size="64.0" />
                 </font>
             </Label>
-            <TextField fx:id="txt_Gold" layoutX="168.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
-            <TextField fx:id="txt_Silver" layoutX="270.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
-            <TextField fx:id="txt_Copper" layoutX="365.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
+            <TextField fx:id="txt_Gold" layoutX="150.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
+            <TextField fx:id="txt_Silver" layoutX="252.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
+            <TextField fx:id="txt_Copper" layoutX="347.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
             <Label fx:id="lbl_Sub1" layoutX="131.0" layoutY="147.0" prefHeight="35.0" prefWidth="539.0" text="EXAMPLE" textAlignment="CENTER">
                 <font>
                     <Font size="24.0" />
@@ -42,18 +42,21 @@
          </Label>
          <Button fx:id="btn_Reset" layoutX="433.0" layoutY="313.0" mnemonicParsing="false" onAction="#reset" text="RESET" />
          <Line endX="-13.0" endY="30.0" layoutX="434.0" layoutY="313.0" startX="-13.0" startY="-6.0" />
-         <Label layoutX="457.0" layoutY="238.0" text="X" />
-         <TextField fx:id="txt_Multiplier" layoutX="481.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
-         <Label fx:id="added" layoutX="363.0" layoutY="280.0" prefHeight="17.0" prefWidth="56.0" text="ADDED" textAlignment="CENTER" />
-         <HBox alignment="CENTER" layoutX="46.0" layoutY="419.0" prefHeight="100.0" prefWidth="711.0" spacing="20.0">
+         <Label layoutX="439.0" layoutY="238.0" text="X" />
+         <Label fx:id="added" layoutX="363.0" layoutY="280.0" text="ADDED" />
+         <TextField fx:id="txt_value" layoutX="463.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
+         <Label layoutX="556.0" layoutY="238.0" text="\@" />
+         <TextField fx:id="txt_Tp" layoutX="580.0" layoutY="234.0" prefHeight="25.0" prefWidth="71.0" />
+         <HBox layoutX="273.0" layoutY="467.0" prefHeight="100.0" prefWidth="327.0" />
+         <HBox alignment="CENTER" layoutX="40.0" layoutY="417.0" prefHeight="100.0" prefWidth="711.0" spacing="20.0">
             <children>
                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                   <children>
-                     <Label fx:id="lbl_Gold" alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="240.0" text="label" textAlignment="RIGHT">
-                        <font>
-                           <Font size="28.0" />
-                        </font>
-                     </Label>
+                        <Label fx:id="lbl_Gold" alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="240.0" text="label" textAlignment="RIGHT">
+                            <font>
+                                <Font size="28.0" />
+                            </font>
+                        </Label>
                      <ImageView fx:id="gold" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/gold.png" />
@@ -63,11 +66,11 @@
                </HBox>
                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                   <children>
-                     <Label fx:id="lbl_Silver" alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="48.0" text="100">
-                        <font>
-                           <Font size="28.0" />
-                        </font>
-                     </Label>
+                        <Label fx:id="lbl_Silver" alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="48.0" text="100">
+                            <font>
+                                <Font size="28.0" />
+                            </font>
+                        </Label>
                      <ImageView fx:id="silver" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/silver.png" />

@@ -1,33 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.fxml.*?>
 
-<TabPane xmlns:fx="http://javafx.com/fxml">
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controllers.MainController">
     <tabs>
 
         <Tab text="Changelog">
             <content>
-                <fx:include source="Changelog.fxml"/>
+                <fx:include fx:id="change" source="Changelog.fxml" />
             </content>
         </Tab>
 
         <Tab text="Sum Gold">
             <content>
-                <fx:include source="Sumatory.fxml"/>
+                <fx:include source="Sumatory.fxml" />
             </content>
         </Tab>
 
-        <Tab text ="Gold Multiplier">
+        <Tab text="Gold subtract">
             <content>
-                <fx:include source="Multiply.fxml"/>
+                <fx:include source="Subtract.fxml" />
+            </content>
+        </Tab>
+
+        <Tab text="Gold Multiplier">
+            <content>
+                <fx:include source="Multiply.fxml" />
             </content>
         </Tab>
 
         <Tab text="Value in stacks">
             <content>
-                <fx:include source="ValueStacks.fxml"/>
+                <fx:include source="ValueStacks.fxml" />
             </content>
         </Tab>
+
+        <Tab text="TP@ valuer">
+            <content>
+                <fx:include source="TpValuer.fxml" />
+            </content>
+        </Tab>
+
 
     </tabs>
 </TabPane>
