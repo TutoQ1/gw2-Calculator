@@ -2,7 +2,7 @@
 
 
 
-> A desktop calculator for Guild Wars 2 players who want to track gold, silver, and copper across farming sessions — no API, no login, no browser needed.
+> A desktop calculator for Guild Wars 2 players who want to track gold, silver, and copper across selling sessions — no API, no login, no browser needed.
 
 ---
 
